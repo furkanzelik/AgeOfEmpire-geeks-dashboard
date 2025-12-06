@@ -52,9 +52,6 @@ export default function App() {
             <footer className="border-t border-slate-800 bg-[#020617]/95 text-xs text-slate-400 py-3">
                 <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
                     <span>Made for AoE IV Geeks · Uses aoe4world.com API</span>
-                    <span className="text-[10px] text-slate-500">
-            Not affiliated with Microsoft / Relic
-          </span>
                 </div>
             </footer>
         </div>
