@@ -1,0 +1,115 @@
+/* src/index.css */
+/* Purpose: global theme + AoE4 helpers + Tailwind base */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------- GLOBAL THEME --------- */
+
+:root {
+  color-scheme: dark;
+}
+
+/* Dark imperial background + default text */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+          radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Main AOE-style display font */
+.font-cinzel {
+  font-family: "Cinzel", ui-serif, Georgia, "Times New Roman", serif;
+}
+
+/* Imperial card look (optional utility class) */
+.imperial-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(214, 181, 108, 0.45);
+  border-radius: 0.75rem;
+  box-shadow:
+          0 0 25px rgba(0, 0, 0, 0.85),
+          0 0 18px rgba(15, 23, 42, 0.9);
+}
+
+/* Imperial gold button */
+.imperial-button {
+  background-image: linear-gradient(to bottom, #e7c983, #c49b4a);
+  color: #020617;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.6rem;
+  box-shadow: 0 0 18px rgba(214, 181, 108, 0.55);
+  border: 1px solid rgba(248, 250, 252, 0.08);
+}
+
+.imperial-button:hover {
+  filter: brightness(1.06);
+}
+
+/* Gold divider (for sections) */
+.imperial-divider {
+  height: 2px;
+  background-image: linear-gradient(
+          to right,
+          transparent,
+          rgba(214, 181, 108, 0.9),
+          transparent
+  );
+}
+
+/* Optional parchment texture layer (if you add /textures/parchment.png) */
+/*
+.texture-parchment {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("/textures/parchment.png");
+  background-size: cover;
+}
+*/
+
+/* --------- HERO / HOMEPAGE ANIMATIONS --------- */
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-slideUp {
+  animation: slideUp 1s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.delayed-200 { animation-delay: 0.2s; }
+.delayed-400 { animation-delay: 0.4s; }
+
+/* Smooth scrollbars (klein detail) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #64748b #020617;
+}
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: #020617;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #64748b;
+  border-radius: 999px;
+}
